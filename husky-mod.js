@@ -79,6 +79,8 @@ async function huskyMod(dir = '.husky_mod') {
 
 function getCommitMsgContent() {
   return `#!/bin/sh
+
+npx commitlint --edit $1
 `;
 }
 
