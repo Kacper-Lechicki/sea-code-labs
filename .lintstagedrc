@@ -1,5 +1,5 @@
 {
-  "apps/**/src/app/**/*.ts": ["prettier --config ./.prettierrc --write", "eslint"],
-  "apps/**/src/app/**/*.html": ["prettier --config ./.prettierrc --write", "eslint"],
-  "apps/**/src/app/**/*.scss": ["stylelint"],
+  "apps/**/src/app/**/*.ts": ["prettier --config ./.prettierrc --write", "eslint --config ./eslint.config.js --fix"],
+  "apps/**/src/app/**/*.html": ["prettier --config ./.prettierrc --write", "eslint --config ./eslint.config.js --fix"],
+  "apps/**/src/app/**/*.scss": ["stylelint --config ./.stylelintrc.json"],
 }
