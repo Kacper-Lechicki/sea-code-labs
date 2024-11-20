@@ -2,7 +2,7 @@ module.exports = {
   plugins: [
     {
       rules: {
-        'custom-header': (parsed) => {
+        'custom-header': (parsed: { header: string }): (string | boolean)[] => {
           const { header } = parsed;
           const regex = /^\[([A-Z]+-\d+)] (fix|feat|docs|refactor|test): (.+)$/;
 

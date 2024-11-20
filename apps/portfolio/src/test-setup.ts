@@ -7,4 +7,5 @@ globalThis.ngJest = {
     errorOnUnknownProperties: true,
   },
 };
+
 import 'jest-preset-angular/setup-jest';

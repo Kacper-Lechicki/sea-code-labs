@@ -6,4 +6,5 @@ import { APP_CONFIG } from './app.config';
 const SERVER_CONFIG: ApplicationConfig = {
   providers: [provideServerRendering()],
 };
+
 export const CONFIG: ApplicationConfig = mergeApplicationConfig(APP_CONFIG, SERVER_CONFIG);

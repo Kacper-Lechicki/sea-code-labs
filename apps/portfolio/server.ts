@@ -11,11 +11,13 @@ export function app(): express.Express {
   const browserDistFolder: string = resolve(serverDistFolder, '../browser');
   const indexHtml: string = join(serverDistFolder, 'index.server.html');
   const commonEngine = new CommonEngine();
+
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
   server.get('**', express.static(browserDistFolder, { maxAge: '1y', index: 'index.html' }));
   server.get('**', (req: Request, res: Response, next: NextFunction): void => {
     const { protocol, originalUrl, baseUrl, headers } = req;
+
     commonEngine
       .render({
         bootstrap,
@@ -27,12 +29,14 @@ export function app(): express.Express {
       .then((html: string): unknown => res.send(html))
       .catch((err: unknown): void => next(err));
   });
+
   return server;
 }
 
 function run(): void {
   const port: string | 4000 = process.env['PORT'] || 4000;
   const server: Express = app();
+
   server.listen(port, (): void => {
     console.log(`Node Express server listening on
 http://localhost:${port}`);
