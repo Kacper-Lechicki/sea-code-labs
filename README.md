@@ -1,4 +1,4 @@
-# 📁 **Name**: sea-code-labs
+# 📁 **Name**: sea_code_labs
 
 ### 🎯 **Goal**:
 
